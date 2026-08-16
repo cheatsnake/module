@@ -44,6 +44,27 @@ func TestMultiply(t *testing.T) {
 	}
 }
 
+func TestSub(t *testing.T) {
+	tests := []struct {
+		name string
+		a    int
+		b    int
+		want int
+	}{
+		{name: "positive", a: 5, b: 2, want: 3},
+		{name: "negative", a: -5, b: 2, want: -7},
+		{name: "zero", a: 0, b: 0, want: 0},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := Sub(tt.a, tt.b); got != tt.want {
+				t.Errorf("Sub(%d, %d) = %d, want %d", tt.a, tt.b, got, tt.want)
+			}
+		})
+	}
+}
+
 func TestDivide(t *testing.T) {
 	tests := []struct {
 		name string

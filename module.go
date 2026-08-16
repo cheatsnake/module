@@ -8,6 +8,11 @@ func Add(a, b int) int {
 	return a + b
 }
 
+// Sub subtracts two integers
+func Sub(a, b int) int {
+	return a - b
+}
+
 // Multiply multiplies two integers using the private module
 func Multiply(a, b int) int {
 	// private module is accessible only in this level
