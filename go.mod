@@ -1,3 +1,3 @@
-module github.com/cheatsnake/module
+module github.com/cheatsnake/module/v2
 
 go 1.26

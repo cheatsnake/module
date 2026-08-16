@@ -5,19 +5,19 @@ import "testing"
 func TestSum(t *testing.T) {
 	tests := []struct {
 		name string
-		a    int
-		b    int
+		nums []int
 		want int
 	}{
-		{name: "positive", a: 1, b: 2, want: 3},
-		{name: "negative", a: -1, b: -2, want: -3},
-		{name: "zero", a: 0, b: 0, want: 0},
+		{name: "positive", nums: []int{1, 2, 3}, want: 6},
+		{name: "negative", nums: []int{-1, -2, -3}, want: -6},
+		{name: "mixed", nums: []int{-1, 2, -3, 4}, want: 2},
+		{name: "empty", nums: []int{}, want: 0},
 	}
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := Sum(tt.a, tt.b); got != tt.want {
-				t.Errorf("Sum(%d, %d) = %d, want %d", tt.a, tt.b, got, tt.want)
+			if got := Sum(tt.nums); got != tt.want {
+				t.Errorf("Sum(%v) = %d, want %d", tt.nums, got, tt.want)
 			}
 		})
 	}

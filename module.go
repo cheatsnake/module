@@ -1,7 +1,7 @@
 // Package module provides some simple functions
 package module
 
-import "github.com/cheatsnake/module/internal/private"
+import "github.com/cheatsnake/module/v2/internal/private"
 
 // Add adds two integers
 func Add(a, b int) int {
