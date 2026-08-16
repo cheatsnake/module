@@ -43,3 +43,25 @@ func TestMultiply(t *testing.T) {
 		})
 	}
 }
+
+func TestDivide(t *testing.T) {
+	tests := []struct {
+		name string
+		a    int
+		b    int
+		want int
+	}{
+		{name: "positive", a: 6, b: 3, want: 2},
+		{name: "negative", a: -6, b: 3, want: -2},
+		{name: "zero numerator", a: 0, b: 5, want: 0},
+		{name: "rounds toward zero", a: 5, b: 2, want: 2},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := Divide(tt.a, tt.b); got != tt.want {
+				t.Errorf("Divide(%d, %d) = %d, want %d", tt.a, tt.b, got, tt.want)
+			}
+		})
+	}
+}

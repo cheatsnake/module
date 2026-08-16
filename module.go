@@ -13,3 +13,8 @@ func Multiply(a, b int) int {
 	// private module is accessible only in this level
 	return private.Multiply(a, b)
 }
+
+// Divide divides two integers
+func Divide(a, b int) int {
+	return a / b
+}
